@@ -1,0 +1,81 @@
+<!-- "base.html" sayfasındaki iskeleti kullanması için. Her sayfada ortak. (Ana html iskeletini dahil ediyor.) -->
+{% extends "base.html" %} 
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+{% endblock %}
+
+
+{% block tittle %}
+Hakkımda
+{% endblock %}
+
+
+{% block content %}
+
+<div class="about-page">
+   <div class="container">
+       <h1>Hakkımda</h1>
+       <div class="profile">
+           <img src="{% static 'blog/images/yapayzeka.jpeg' %}" alt="Profile Picture" class="profile-picture">
+           <div class="bio">
+               <p>Merhaba, ben Doğuş Üniversitesi Yazılım Mühendisliği 4. sınıf öğrencisiyim. Merağım beni son 3 yıldır yapay zeka ve veri bilimi alanlarına yönlendirdi. Bu süreçte makine öğrenimi, derin öğrenme ve doğal dil işleme üzerine çalışmalar yaptım. Ayrıca yazılım geliştirme, web teknolojileri ve veritabanı yönetimi konularında da deneyim kazandım.</p>
+           </div>
+       </div>
+   </div>
+</div>
+
+<style>
+    body {
+        background-color: #f9f9f9;
+    }
+   
+   .about-page {
+       padding: 20px;
+       background-color: #f4f4f9;
+   }
+
+   .container {
+       max-width: 1000px;
+       margin: 0 auto;
+       text-align: center;
+   }
+
+   .container h1 {
+       font-size: 36px;
+       margin-bottom: 20px;
+       color: #333;
+   }
+
+   .profile {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;
+       text-align: center;
+       background-color: #fff;
+       padding: 30px;
+       border-radius: 8px;
+       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+   }
+
+   .profile-picture {
+       width: 150px;
+       height: 150px;
+       border-radius: 50%;
+       margin-bottom: 20px;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   }
+
+   .bio p {
+       font-size: 18px;
+       color: #555;
+       line-height: 1.6;
+   }
+</style>    
+
+{% endblock %}
+
+{% block js_files %}
+{% endblock %}

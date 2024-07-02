@@ -1,0 +1,97 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %} 
+<link rel="stylesheet" href="{% static 'account/css/style.css' %}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block tittle %} 
+     Giriş 
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+     <div class="col-md-6 offset-md-3">
+          <div class="card">
+               <div class="card-body">
+                    <h1 class="card-title text-center">Giriş Yap</h1>
+                    <hr>
+                    <form method="POST">
+                         {% csrf_token %}
+                         {% if error %}
+                         <div class="alert alert-danger">
+                              <i class="fas fa-exclamation-circle"></i> {{ error }}
+                         </div>
+                         {% endif %}
+                         <div class="mb-3">
+                              <label for="username" class="form-label">Kullanıcı Adı</label>
+                              <input type="text" class="form-control" name="username" id="username" placeholder="Kullanıcı Adınızı girin">
+                         </div>
+                         <div class="mb-3">
+                              <label for="password" class="form-label">Parola</label>
+                              <input type="password" class="form-control" name="password" id="password" placeholder="Parolanızı girin">
+                         </div>
+                         <div class="d-grid">
+                              <input type="submit" value="Giriş" class="btn btn-primary btn-block">
+                         </div>
+                    </form>
+               </div>
+          </div>
+     </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(70deg, #e3f2fd, #ffffff);
+        font-family: 'Arial', sans-serif;
+    }
+    .container.mt-5 {
+        margin-top: 3rem;
+    }
+    .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-body {
+        padding: 2rem;
+    }
+    .card-title {
+        margin-bottom: 1rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+    .form-label {
+        font-weight: bold;
+    }
+    .form-control {
+        border-radius: 10px;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+    .btn.btn-primary {
+        border-radius: 10px;
+        font-size: 1rem;
+        padding: 0.75rem;
+        border: none;
+        transition: background-color 0.3s;
+
+    }
+    .btn.btn-primary:hover{
+     background-color:#2575fc;
+    }
+    
+    .alert {
+        border-radius: 10px;
+    }
+</style>
+
+{% endblock %}
+
+{% block js_files %}
+<script src="{% static 'account/js/script.js' %}"></script>
+{% endblock %}

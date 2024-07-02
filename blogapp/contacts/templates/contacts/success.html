@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'contacts/css/style.css' %}">
+<style>
+    body {
+        background: linear-gradient(70deg, #e3f2fd, #ffffff);
+        font-family: 'Arial', sans-serif;
+        color: #333;
+    }
+    .success-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 80px); 
+    }
+    .success-message {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 600px;
+        width: 100%;
+    }
+    .success-message h1 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .success-message p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+    .btn-success {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+    .btn-success:hover {
+        background-color: #007bff;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+İletişim
+{% endblock %}
+
+{% block content %}
+
+<div class="success-container">
+    <div class="success-message">
+        <h1>Teşekkürler!</h1>
+        <p>Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğim.</p>
+        <a href="{% url 'home' %}" class="btn btn-success">Geri Dön</a>
+    </div>
+</div>
+
+{% endblock %}

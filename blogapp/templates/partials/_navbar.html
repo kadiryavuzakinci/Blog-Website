@@ -1,0 +1,77 @@
+<nav class="navbar navbar-dark bg-primary navbar-expand sticky-top">
+    <div class="container">
+        <a href="{% url 'home' %}" class="navbar-brand">Kadir Blog</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+           <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a href="{% url 'home' %}" class="nav-link">Ana Sayfa</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'about' %}" class="nav-link">Hakkımda</a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="{% url 'blogs' %}" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'form' %}" class="nav-link">İletişim</a>
+            </li>
+            
+           </ul>
+           <ul class="navbar-nav ms-auto">
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                  <a href="{% url "logout" %}" class="nav-link">Çıkış</a>
+              </li>
+              <li class="nav-item">
+                  <a href="" class="nav-link">Hoş Geldiniz, {{ user.username|title }}</a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                 <a href="{% url "login" %}" class="nav-link">Giriş </a>
+              </li>
+              <li class="nav-item">
+                 <a href="{% url "register" %}" class="nav-link">Kayıt Ol</a>
+              </li>
+            {% endif %}
+           </ul>
+        </div>
+    </div> 
+</nav>
+
+<style>
+.nav-link {
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #ddd;
+}
+
+/* Alt çizgi animasyonu */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin: auto;
+    background: white;
+    left: 50%;
+    bottom: 5px; 
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+</style>
