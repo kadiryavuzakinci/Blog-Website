@@ -1,6 +1,12 @@
 # Blog-Website
 This is a Django-based blog application. Follow the steps below to set up and run the project on your local machine.
 
+
+# Screenshot
+
+<img src="Homepage.png" alt="alt text" width="700" height="500">
+
+
 ## Requirements
 
 Ensure you have the following installed:
@@ -49,9 +55,6 @@ Follow the prompts to set up your admin credentials.
 - Django
 - django-ckeditor
 
-# Screenshot
-
-<img src="Homepage.png" alt="alt text" width="700" height="500">
 
 # License
 This project is licensed under the MIT License. See the LICENSE file for more details.
